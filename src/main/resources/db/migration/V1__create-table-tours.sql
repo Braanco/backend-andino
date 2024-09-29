@@ -1,0 +1,5 @@
+CREATE TABLE tours (
+    id INTEGER PRIMARY KEY,
+    tour_name VARCHAR(255) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL
+);
