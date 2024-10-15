@@ -73,6 +73,8 @@ public class ClientService {
 
     }
 
+
+
     //Metodo que faz o calculo final do pedido, pegando o preço do passeio e a quantidade de pessoa
     private Double calculateFinalPrice(Double price, Integer personQuantity) {
         return price * personQuantity;

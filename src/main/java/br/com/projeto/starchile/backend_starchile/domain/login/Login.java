@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "login")
+@Table(name = "logins")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -21,5 +21,7 @@ public class Login {
     @Column(name = "user_name")
     private String userName;
     private String password;
+    @Enumerated(EnumType.STRING)
+    private EStatus status;
 
 }
