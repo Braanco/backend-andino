@@ -23,6 +23,8 @@ public class Client {
     private Long id;
     @Column(name = "name")
     private String name;
+    @Column(name = "cpf")
+    private String cpf;
     @Column(name = "phone")
     private String phone;
     @Column(name = "address_client")
@@ -50,5 +52,6 @@ public class Client {
         this.hotelName = clientDTO.hotelName();
         this.tourDate = clientDTO.tourDate();
         this.personQuantity = clientDTO.personQuantity();
+        this.cpf = clientDTO.cpf();
     }
 }
