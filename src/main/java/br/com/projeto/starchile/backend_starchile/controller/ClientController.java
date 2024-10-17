@@ -13,7 +13,7 @@ import java.util.List;
 
 //Classe que faz o controle dos dados
 @RestController
-@RequestMapping("/v1/star_chile")
+@RequestMapping("/v1/andino")
 public class ClientController {
 
     @Autowired
