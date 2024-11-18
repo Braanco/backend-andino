@@ -1,6 +1,6 @@
 package br.com.projeto.starchile.backend_starchile.controller;
 
-import br.com.projeto.starchile.backend_starchile.domain.employee.EmployeeCreateDto;
+import br.com.projeto.starchile.backend_starchile.model.employee.EmployeeCreateDto;
 import br.com.projeto.starchile.backend_starchile.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 //Classe que faz o controle dos dados
 @RestController
-@RequestMapping("/v1/star_chile/employee")
+@RequestMapping("/v1/andino/employee")
 public class EmployeeController {
 
     @Autowired

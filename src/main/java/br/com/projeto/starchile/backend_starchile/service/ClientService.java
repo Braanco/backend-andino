@@ -1,8 +1,8 @@
 package br.com.projeto.starchile.backend_starchile.service;
 
-import br.com.projeto.starchile.backend_starchile.domain.client.Client;
-import br.com.projeto.starchile.backend_starchile.domain.client.ClientDTO;
-import br.com.projeto.starchile.backend_starchile.domain.client.InsertClientDTO;
+import br.com.projeto.starchile.backend_starchile.model.client.Client;
+import br.com.projeto.starchile.backend_starchile.model.client.ClientDTO;
+import br.com.projeto.starchile.backend_starchile.model.client.InsertClientDTO;
 import br.com.projeto.starchile.backend_starchile.repository.ClientRepository;
 import br.com.projeto.starchile.backend_starchile.repository.TourRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,11 +68,10 @@ public class ClientService {
 
     //Deleta o pedido do cliente pelo  id
     public void deleteClient(Long id) {
-        var data = clientRepository.findById(id).orElseThrow(()->new RuntimeException("cliente nao existe"));
+        var data = clientRepository.findById(id).orElseThrow(() -> new RuntimeException("cliente nao existe"));
         clientRepository.delete(data);
 
     }
-
 
 
     //Metodo que faz o calculo final do pedido, pegando o preço do passeio e a quantidade de pessoa

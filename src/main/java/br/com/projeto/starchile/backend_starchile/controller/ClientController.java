@@ -1,8 +1,8 @@
 package br.com.projeto.starchile.backend_starchile.controller;
 
-import br.com.projeto.starchile.backend_starchile.domain.client.Client;
-import br.com.projeto.starchile.backend_starchile.domain.client.ClientDTO;
-import br.com.projeto.starchile.backend_starchile.domain.client.InsertClientDTO;
+import br.com.projeto.starchile.backend_starchile.model.client.Client;
+import br.com.projeto.starchile.backend_starchile.model.client.ClientDTO;
+import br.com.projeto.starchile.backend_starchile.model.client.InsertClientDTO;
 import br.com.projeto.starchile.backend_starchile.repository.TourRepository;
 import br.com.projeto.starchile.backend_starchile.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;

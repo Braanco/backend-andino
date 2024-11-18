@@ -1,6 +1,6 @@
-package br.com.projeto.starchile.backend_starchile.domain.login;
+package br.com.projeto.starchile.backend_starchile.model.login;
 
-import br.com.projeto.starchile.backend_starchile.domain.employee.Employee;
+import br.com.projeto.starchile.backend_starchile.controller.RegisterDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,7 +13,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Login {
+public class Login  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +22,11 @@ public class Login {
     private String userName;
     private String password;
     @Enumerated(EnumType.STRING)
-    private EStatus status;
+    private Role role;
 
+
+    public Login(RegisterDto registerDto) {
+        this.userName = registerDto.user_name();
+
+    }
 }

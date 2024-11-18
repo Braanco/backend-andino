@@ -1,4 +1,4 @@
-package br.com.projeto.starchile.backend_starchile.domain.tour;
+package br.com.projeto.starchile.backend_starchile.model.tour;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

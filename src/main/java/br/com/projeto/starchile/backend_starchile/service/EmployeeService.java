@@ -1,9 +1,9 @@
 package br.com.projeto.starchile.backend_starchile.service;
 
-import br.com.projeto.starchile.backend_starchile.domain.client.Client;
-import br.com.projeto.starchile.backend_starchile.domain.client.ClientDataDto;
-import br.com.projeto.starchile.backend_starchile.domain.employee.Employee;
-import br.com.projeto.starchile.backend_starchile.domain.employee.EmployeeCreateDto;
+import br.com.projeto.starchile.backend_starchile.model.client.Client;
+import br.com.projeto.starchile.backend_starchile.model.client.ClientDataDto;
+import br.com.projeto.starchile.backend_starchile.model.employee.Employee;
+import br.com.projeto.starchile.backend_starchile.model.employee.EmployeeCreateDto;
 import br.com.projeto.starchile.backend_starchile.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,8 @@ public class EmployeeService {
 
     @Autowired
     private EmployeeRepository employeeRepository;
-
+    @Autowired
+    private LoginService loginService;
     //cria o funcionario
     public Employee create(EmployeeCreateDto createDto) {
         if (employeeRepository.findByNumberRegistry(createDto.numberRegistry()).isEmpty()) {

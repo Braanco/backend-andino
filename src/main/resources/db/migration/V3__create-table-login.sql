@@ -1,9 +1,8 @@
 CREATE TABLE logins (
-id INTEGER PRIMARY KEY,
-user_name VARCHAR(50) NOT NULL,
-password VARCHAR(50) NOT NULL,
-status VARCHAR(20)
+id INTEGER AUTO_INCREMENT PRIMARY KEY,
+user_name VARCHAR(100) NOT NULL,
+password VARCHAR(100) NOT NULL,
+role VARCHAR(100) NOT NULL
 );
 
-INSERT INTO logins (id,user_name,password,status) VALUES (1,'gerente','gerente','GERENTE');
-INSERT INTO logins (id,user_name,password,status) VALUES (2,'vendedor','vendedor','VENDEDOR');
+INSERT INTO logins (user_name,password,role) VALUES ('admin','admin','ADMIN');

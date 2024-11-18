@@ -1,7 +1,6 @@
-package br.com.projeto.starchile.backend_starchile.domain.client;
+package br.com.projeto.starchile.backend_starchile.model.client;
 
-import br.com.projeto.starchile.backend_starchile.domain.employee.Employee;
-import br.com.projeto.starchile.backend_starchile.domain.tour.Tours;
+import br.com.projeto.starchile.backend_starchile.model.tour.Tours;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

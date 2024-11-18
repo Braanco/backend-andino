@@ -1,6 +1,6 @@
 package br.com.projeto.starchile.backend_starchile.repository;
 
-import br.com.projeto.starchile.backend_starchile.domain.client.Client;
+import br.com.projeto.starchile.backend_starchile.model.client.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
