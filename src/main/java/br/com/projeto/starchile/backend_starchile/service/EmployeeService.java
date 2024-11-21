@@ -34,6 +34,7 @@ public class EmployeeService {
     //deleta o empregado
     public void deleteEmployee(Long numberRegistry){
         var data = employeeRepository.findByNumberRegistry(numberRegistry).orElseThrow(()->new RuntimeException("Empregado não encontrado"));
+        loginService.deletarLogin(numberRegistry.toString());
         employeeRepository.delete(data);
     }
 

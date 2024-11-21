@@ -6,13 +6,16 @@ import br.com.projeto.starchile.backend_starchile.model.login.LoginDto;
 import br.com.projeto.starchile.backend_starchile.model.login.ResponseDto;
 import br.com.projeto.starchile.backend_starchile.repository.LoginRepository;
 import br.com.projeto.starchile.backend_starchile.security.JwtService;
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
+import com.auth0.jwt.exceptions.JWTVerificationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 public class LoginService {
-
     @Autowired
     private LoginRepository repository;
     @Autowired
@@ -43,5 +46,22 @@ public class LoginService {
         }
 
         throw new RuntimeException("Usuario ja existe");
+    }
+
+    public RegisterDto buscarRole(String token){
+        JwtService service = new JwtService();
+        String name = this.buscarUserPorToken(token);
+        var dado = repository.findByUserName(name).orElseThrow(()->new RuntimeException("usuario nao encontrado"));
+        return new RegisterDto(dado.getUserName(), dado.getPassword(), dado.getRole());
+    }
+
+    public void deletarLogin(String userName){
+        Login login = repository.findByUserName(userName).orElseThrow();
+        repository.delete(login);
+    }
+
+    public String buscarUserPorToken(String token){
+       return JWT.decode(token).getSubject();
+
     }
 }

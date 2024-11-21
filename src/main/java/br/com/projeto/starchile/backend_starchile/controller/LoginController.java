@@ -8,10 +8,7 @@ import br.com.projeto.starchile.backend_starchile.security.JwtService;
 import br.com.projeto.starchile.backend_starchile.service.LoginService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/v1/andino")
@@ -49,6 +46,11 @@ public class LoginController {
         return ResponseEntity.badRequest().build();
     }
 
+    @GetMapping("/login/{token}")
+    public ResponseEntity buscarDados(@PathVariable String token){
+        RegisterDto dado = loginService.buscarRole(token);
+        return ResponseEntity.ok(dado);
+    }
 
 }
 
